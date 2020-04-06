@@ -1,0 +1,10 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px;
+  padding: 10px 5px;
+  background-color: antiquewhite;
+}
+.item{
+  flex: 1
+}
