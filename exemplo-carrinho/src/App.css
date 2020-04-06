@@ -1,10 +1,75 @@
+body {
+  margin: 0
+}
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .card {
   display: flex;
   flex-direction: row;
+  height: 60px;
   margin: 10px 0px;
   padding: 10px 5px;
-  background-color: antiquewhite;
+  border-radius: 15px;
+  border: 1px solid black;
 }
-.item{
-  flex: 1
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item.name {
+  justify-content: start;
+  padding-left: 20px;
+  font-size: 24px;
+}
+.item.price {
+  font-size: 30px;
+}
+
+.item.delete {
+  flex: 0.5
+}
+
+button {
+  height: 50px;
+  width: 100%;
+  background-color:#393939;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.15s;
+}
+button:hover {
+  background-color:#141313;
+}
+
+.container {
+  width: 75vw;
+}
+.results {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.to-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.end-title {
+  color: black;
+  font-size: 26px;
 }

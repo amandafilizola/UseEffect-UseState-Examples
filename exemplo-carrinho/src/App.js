@@ -41,7 +41,7 @@ function App() {
 
   function somarTudo() {
     let soma = 0;
-    carrinho.forEach(produto=>{
+    carrinho.forEach(produto => {
       soma+=produto.price;
     })
     setSomaTotal(soma+frete)
@@ -53,15 +53,29 @@ function App() {
 
   return (
     <div className="App">
-      {carrinho.map(produto=>(
-        <div className='card' key={produto.id}>
-          <div className='item'>{produto.name}</div>
-          <div className='item'>{produto.price}</div>
-          <button className='item' onClick={()=>handleDelete(produto.id)}>DELETE</button>
+
+      <div className='container'>
+        { carrinho.map(produto=>(
+
+          <div className='card' key={produto.id}>
+            <div className='item name'>{produto.name}</div>
+            <div className='item price'>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produto.price)}</div>
+            <div className='item delete'>
+              <button onClick={() => handleDelete(produto.id)}>DELETE</button>
+            </div>
+          </div>
+
+        ))}
+
+        <div className='results'>
+          <div className='to-left'>
+            <div className='end-title'><strong>Frete:</strong> {frete}</div>
+            <div className='end-title'> <strong>Total da compra:</strong> {somaTotal}</div>
+          </div>
         </div>
-      ))}
-      <div>Frete: {frete}</div>
-      <div>Total da compra: {somaTotal}</div>
+
+      </div>
+
     </div>
   );
 }
