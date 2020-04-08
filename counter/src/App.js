@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'
+import './App.css';
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -7,12 +7,14 @@ function App() {
   function handleAdd() {
     setCounter(counter + 1);
   }
+
   function handleDim() {
     setCounter(counter - 1);
   }
 
   return (
     <div className="App">
+
       <div className='card'>
         <div className='number'>{counter}</div>
 
